@@ -36,6 +36,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
+          # 确保 submodule URL 使用 HTTPS
+          git config submodule.content.url https://github.com/dylean/quartz-content.git
+          
           # 初始化 submodule（如果还没有初始化）
           git submodule init || true
           
