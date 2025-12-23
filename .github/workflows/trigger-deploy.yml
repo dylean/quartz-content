@@ -1,0 +1,38 @@
+name: Trigger Quartz Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-submodule:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout quartz-dean repository
+        uses: actions/checkout@v4
+        with:
+          repository: dylean/quartz-dean
+          ref: v4
+          token: ${{ secrets.QUARTZ_DEPLOY_TOKEN }}
+          path: quartz-dean
+      
+      - name: Update submodule reference
+        run: |
+          cd quartz-dean
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git submodule update --remote content
+          git add content
+          
+          # 检查是否有更改
+          if git diff --staged --quiet; then
+            echo "No changes to submodule"
+            exit 0
+          fi
+          
+          git commit -m "Update content submodule to ${{ github.sha }}"
+          git push origin v4
+
