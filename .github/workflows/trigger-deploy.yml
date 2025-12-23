@@ -39,11 +39,29 @@ jobs:
           # 确保 submodule URL 使用 HTTPS
           git config submodule.content.url https://github.com/dylean/quartz-content.git
           
+          # 检查 .gitmodules 是否存在
+          if [ ! -f .gitmodules ]; then
+            echo "Error: .gitmodules file not found!"
+            exit 1
+          fi
+          
           # 初始化 submodule（如果还没有初始化）
           git submodule init || true
           
-          # 更新 submodule 到最新提交
-          git submodule update --remote content
+          # 如果 content 目录不存在，先创建它
+          if [ ! -d content ]; then
+            echo "Content directory not found, initializing submodule..."
+            git submodule update --init --recursive content || {
+              # 如果 submodule update 失败，手动克隆
+              echo "Submodule update failed, cloning manually..."
+              rm -rf content
+              git clone https://github.com/dylean/quartz-content.git content
+              git add content
+            }
+          else
+            # 更新 submodule 到最新提交
+            git submodule update --remote content
+          fi
           
           # 检查 submodule 状态
           git submodule status
