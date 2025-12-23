@@ -11,6 +11,16 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Check if token is set
+        run: |
+          if [ -z "${{ secrets.QUARTZ_DEPLOY_TOKEN }}" ]; then
+            echo "⚠️ QUARTZ_DEPLOY_TOKEN is not set!"
+            echo "Please add QUARTZ_DEPLOY_TOKEN secret in repository settings"
+            exit 1
+          else
+            echo "✅ Token is set"
+          fi
+      
       - name: Checkout quartz-dean repository
         uses: actions/checkout@v4
         with:
@@ -19,12 +29,22 @@ jobs:
           token: ${{ secrets.QUARTZ_DEPLOY_TOKEN }}
           path: quartz-dean
       
-      - name: Update submodule reference
+      - name: Initialize and update submodule
         run: |
           cd quartz-dean
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 初始化 submodule（如果还没有初始化）
+          git submodule init || true
+          
+          # 更新 submodule 到最新提交
           git submodule update --remote content
+          
+          # 检查 submodule 状态
+          git submodule status
+          
+          # 添加 submodule 更改
           git add content
           
           # 检查是否有更改
@@ -33,6 +53,7 @@ jobs:
             exit 0
           fi
           
+          echo "Submodule updated, committing..."
           git commit -m "Update content submodule to ${{ github.sha }}"
           git push origin v4
 
