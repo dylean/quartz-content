@@ -26,5 +26,6 @@
     "editor:insert-link",
     "editor:configure-toolbar"
   ],
-  "spellcheck": false
+  "spellcheck": false,
+  "readableLineLength": false
 }
