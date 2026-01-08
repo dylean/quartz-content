@@ -16,5 +16,3 @@ nb 可以用 obsidian 写博客了
 ## 关于
 
 这个网站使用 [Quartz](https://quartz.jzhao.xyz/) 构建，内容在 [Obsidian](https://obsidian.md/) 中编写。
-
-想做一个巴厘岛旅居的事情
