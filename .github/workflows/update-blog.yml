@@ -1,0 +1,35 @@
+name: Update Blog Submodule
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-submodule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dean-blog
+        uses: actions/checkout@v4
+        with:
+          repository: dylean/dean-blog
+          token: ${{ secrets.BLOG_PAT }}
+          submodules: true
+          fetch-depth: 0
+
+      - name: Update submodule to latest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cd src/content/posts
+          git fetch origin main
+          git checkout origin/main
+          cd ../../..
+          git add src/content/posts
+          git diff --staged --quiet || git commit -m "chore: auto-update content submodule"
+          git push
+
+      - name: Trigger Vercel Deploy (optional)
+        if: success()
+        run: |
+          curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}" || true
