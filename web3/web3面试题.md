@@ -1,5 +1,6 @@
 ---
 title: Web3 面试题参考答案
+slug: web3-interview-answers
 published: 2026-01-10
 description: Web3 技术面试题详细参考答案，涵盖区块链基础、智能合约开发、DApp 交互、后端基础设施及安全进阶。
 tags: [Web3, 面试, Solidity, 区块链]
