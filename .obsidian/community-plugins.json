@@ -4,5 +4,6 @@
   "templater-obsidian",
   "obsidian-tasks-plugin",
   "calendar",
-  "obsidian-plantuml"
+  "obsidian-plantuml",
+  "image-upload-toolkit"
 ]

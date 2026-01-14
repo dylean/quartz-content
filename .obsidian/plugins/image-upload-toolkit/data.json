@@ -1,0 +1,63 @@
+{
+  "imageAltText": true,
+  "replaceOriginalDoc": true,
+  "ignoreProperties": true,
+  "imageStore": "CLOUDFLARE_R2",
+  "showProgressModal": true,
+  "imgurAnonymousSetting": {
+    "clientId": "fb4a95c4bc8432a"
+  },
+  "ossSetting": {
+    "region": "oss-cn-hangzhou",
+    "accessKeyId": "",
+    "accessKeySecret": "",
+    "bucket": "",
+    "endpoint": "https://oss-cn-hangzhou.aliyuncs.com/",
+    "path": "",
+    "customDomainName": ""
+  },
+  "imagekitSetting": {
+    "endpoint": "",
+    "imagekitID": "",
+    "privateKey": "",
+    "publicKey": "",
+    "folder": ""
+  },
+  "awsS3Setting": {
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "region": "",
+    "bucketName": "",
+    "path": "",
+    "customDomainName": ""
+  },
+  "cosSetting": {
+    "region": "",
+    "bucket": "",
+    "secretId": "",
+    "secretKey": "",
+    "path": "",
+    "customDomainName": ""
+  },
+  "kodoSetting": {
+    "accessKey": "",
+    "secretKey": "",
+    "bucket": "",
+    "customDomainName": "",
+    "path": ""
+  },
+  "githubSetting": {
+    "repositoryName": "",
+    "branchName": "main",
+    "token": "",
+    "path": "images"
+  },
+  "r2Setting": {
+    "accessKeyId": "afdd838ad3191d3348a1a90c5a24e011",
+    "secretAccessKey": "b8c0c5fd22ed4d7c2519fc0f482055bc4ce8735248cfbda8784fe55a8766093f",
+    "endpoint": "https://ef94af68c8acd795614c45b2d5807a48.r2.cloudflarestorage.com",
+    "bucketName": "obsidian",
+    "path": "{year}/{mon}/{filename}",
+    "customDomainName": "https://pub-52ec1fbc298546f5a24d3a5301b9a2f2.r2.dev"
+  }
+}
