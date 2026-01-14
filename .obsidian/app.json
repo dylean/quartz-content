@@ -27,5 +27,6 @@
     "editor:configure-toolbar"
   ],
   "spellcheck": false,
-  "readableLineLength": false
+  "readableLineLength": false,
+  "livePreview": true
 }
