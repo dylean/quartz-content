@@ -1,7 +1,7 @@
 ---
 title: "Solana Bootcamp Lesson 2: Building a Sniper Bot & Deep Dive into SPL Tokens"
 slug: solana-bootcamp-lesson-2
-published: 2026-01-16
+published: 2026-01-08
 description: A comprehensive guide to Solana sniper bot architecture, covering Jito bundles, Websocket event listening, honeypot detection, and a hands-on walkthrough of SPL Token creation.
 tags:
   - Solana

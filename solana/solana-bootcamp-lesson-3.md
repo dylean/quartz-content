@@ -1,7 +1,7 @@
 ---
 title: "Solana Bootcamp Lesson 3: The Internet Capital Market & Building On-Chain Storage"
 slug: solana-bootcamp-lesson-3
-published: 2026-01-16
+published: 2026-01-10
 description: Exploring the vision of an Internet Capital Market (Stablecoins, RWA, Payments) and a hands-on Rust tutorial for building a simple on-chain data storage program on Solana.
 tags:
   - Solana

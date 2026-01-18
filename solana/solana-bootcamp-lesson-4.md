@@ -1,7 +1,7 @@
 ---
 title: "Solana Bootcamp Lesson 4: Solana's Vision & Building a Custom Token from Scratch"
 slug: solana-bootcamp-lesson-4
-published: 2026-01-16
+published: 2026-01-14
 description: A comprehensive look at Solana's role in the Internet Capital Market vision, followed by a hands-on guide to building a custom token program (Thai Zhu Coin) from scratch in Rust.
 tags:
   - Solana
